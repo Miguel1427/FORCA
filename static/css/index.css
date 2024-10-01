@@ -1,0 +1,151 @@
+/* Estilos gerais do corpo */
+html, body {
+    height: 100%; /* Garante que o body e o html ocupem 100% da altura da tela */
+    margin: 0; /* Remove a margem padrão */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    display: flex; /* Define o layout flexível */
+    flex-direction: column; /* Organiza os elementos na coluna */
+    background-color: #f2f2f2;
+}
+
+/* Estilo do logo */
+img.senai-logo {
+    max-width: 60%; /* Define a largura máxima da imagem */
+}
+
+/* Estilos do cabeçalho */
+header {
+    background-color: #005caa;
+    color: #fff;
+    padding: 15px 0;
+}
+
+header h1 {
+    margin: 0; /* Remove margem padrão */
+}
+
+/* Estilos principais */
+main {
+    padding: 20px; /* Adiciona padding ao conteúdo principal */
+    flex: 1; /* Faz com que o main ocupe o espaço restante */
+}
+
+section {
+    margin-bottom: 20px; /* Adiciona espaço entre seções */
+}
+h1{
+    color: #002bff;
+    font-size: 30px;
+}
+h2 {
+    color: #349dff; /* Cor para títulos secundários */
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #000;
+}
+
+ol{
+    color: #000;
+    font-size: 18px
+}
+li{
+    text-align: center;
+}
+
+/* Estilo do botão */
+.btn-play {
+    font-size: 18px; /* Tamanho da fonte dentro do botão */
+    width: 300px; /* Largura do botão */
+    height: 60px; /* Altura do botão */
+    border: none; /* Remove a borda padrão */
+    outline: none; /* Remove o contorno ao focar */
+    color: #fff; /* Cor do texto dentro do botão */
+    background: #111; /* Cor de fundo do botão */
+    cursor: pointer; /* Muda o cursor para indicar que o botão é clicável */
+    position: relative; /* Permite o posicionamento absoluto dos elementos filhos */
+    z-index: 0; /* Define o índice z para controle de sobreposição */
+    border-radius: 10px; /* Bordas arredondadas do botão */
+    text-align: center; /* Centraliza o texto dentro do botão */
+    line-height: 60px; /* Alinha verticalmente o texto no centro do botão */
+    margin-top: 20px; /* Margem no topo do botão */
+    display: inline-block; /* Garante que o botão se comporte como um bloco inline */
+    transition: color 0.3s ease, background 0.3s ease; /* Transição suave para cor e fundo */
+}
+
+/* Efeito de brilho animado do botão */
+.btn-play:before {
+    content: ''; /* Adiciona um pseudo-elemento antes do conteúdo do botão */
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000); /* Gradiente de cor animado */
+    position: absolute; /* Posiciona o pseudo-elemento em relação ao botão */
+    top: -4px; /* Desloca o pseudo-elemento para cima */
+    left: -4px; /* Desloca o pseudo-elemento para a esquerda */
+    background-size: 400%; /* Aumenta o tamanho do gradiente para permitir a animação */
+    z-index: -1; /* Coloca o pseudo-elemento atrás do conteúdo do botão */
+    filter: blur(5px); /* Aplica um desfoque ao gradiente */
+    width: calc(100% + 8px); /* Define a largura do pseudo-elemento maior que o botão */
+    height: calc(100% + 8px); /* Define a altura do pseudo-elemento maior que o botão */
+    animation: glowing 20s linear infinite; /* Aplica a animação de brilho ao gradiente */
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.3s ease-in-out; /* Transição suave para a visibilidade */
+    border-radius: 10px; /* Bordas arredondadas para o pseudo-elemento */
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+.btn-play:hover:before {
+    opacity: 1; /* Torna o pseudo-elemento visível ao passar o mouse */
+}
+
+/* Efeito ao clicar no botão */
+.btn-play:active {
+    color: #000; /* Muda a cor do texto para preto quando clicado */
+}
+
+/* Remove o efeito de fundo quando o botão é pressionado */
+.btn-play:active:after {
+    background: transparent; /* Torna o fundo do pseudo-elemento transparente */
+}
+
+/* Estilo para o pseudo-elemento depois do conteúdo do botão */
+.btn-play:after {
+    z-index: -1; /* Coloca o pseudo-elemento atrás do conteúdo do botão */
+    content: ''; /* Adiciona um pseudo-elemento depois do conteúdo do botão */
+    position: absolute; /* Posiciona o pseudo-elemento em relação ao botão */
+    width: 100%; /* Largura do pseudo-elemento igual à do botão */
+    height: 100%; /* Altura do pseudo-elemento igual à do botão */
+    background: #111; /* Cor de fundo do pseudo-elemento */
+    left: 0; /* Alinha o pseudo-elemento à esquerda do botão */
+    top: 0; /* Alinha o pseudo-elemento ao topo do botão */
+    border-radius: 10px; /* Bordas arredondadas para o pseudo-elemento */
+}
+
+/* Animação de brilho do gradiente */
+@keyframes glowing {
+    0% { background-position: 0 0; } /* Começa na posição inicial do gradiente */
+    50% { background-position: 400% 0; } /* Move o gradiente para a posição final */
+    100% { background-position: 0 0; } /* Retorna à posição inicial do gradiente */
+}
+
+/* Estilos do rodapé */
+footer {
+    background-color: #005caa;
+    color: #fff;
+    padding: 15px 0;
+    margin-top: auto; /* Garante que o rodapé fique na parte inferior */
+}
+
+footer .container {
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    color: #fff;
+}
